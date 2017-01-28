@@ -5,7 +5,7 @@ $GLOBALS['config'] = array(
   'mysql' => array(
     'host' => '127.0.0.1',
     'user' => 'root',
-    'password' => '',
+    'password' => 'cheman2123',
     'db' => 'db_books'
   ),
   // how long remember
