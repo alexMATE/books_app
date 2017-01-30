@@ -47,21 +47,6 @@ if(isset($_POST['submit'])) {
 
 
 
-// $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-
-
-
-    $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-    $query = $dbh->prepare("SELECT book_name FROM booksDB");
-    $query->execute();
-    $result = $query;
-
-
-echo $result;
-
-
  ?>
 
   <!-- <td><?php echo htmlspecialchars($result['book_name']); ?></td> -->
