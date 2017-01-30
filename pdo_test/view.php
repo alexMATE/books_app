@@ -8,7 +8,7 @@
 <div id="main">
 <h1>Insert data into database using PDO</h1>
   <div id="login">
-  <h2>Student's Form</h2>
+  <h2>Upload Books Form</h2>
   <hr/>
     <form action="" method="post">
       <label>Book name :</label>
@@ -22,22 +22,22 @@
 
 <?php
 require_once 'db2.php';
+// Conecting
+$dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 if(isset($_POST['submit'])) {
+
   try {
-    $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     $sql = "INSERT INTO booksDB (book_name, book_author) VALUES ('".$_POST["book_name"]."','".$_POST["book_author"]."')";
 
     if ($dbh->query($sql)) {
       echo 'New Record Inserted Successfully';
+      echo '<br>';
     } else {
       echo 'Data not successfully Inserted';
     }
-
-    $dbh = null;
+    // $dbh = null;
   }
 
   catch(PDOException $e) {
@@ -45,11 +45,19 @@ if(isset($_POST['submit'])) {
   }
 }
 
+// Display Name and Author
+$query = $dbh->query('SELECT book_name, book_author FROM booksDB');
 
+while ($r = $query->fetch()) {
+  echo '<br>';
+  echo '<h4>' . $r['book_name'] . '</h4>';
+  echo $r['book_author'], '<br>';
+}
+die();
 
  ?>
 
-  <!-- <td><?php echo htmlspecialchars($result['book_name']); ?></td> -->
+
 
 </body>
 </html>
