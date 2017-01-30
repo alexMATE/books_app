@@ -5,6 +5,8 @@ $user = DB::getInstance()->insert('users' , array(
   'username' => 'Dele',
   'password' => 'password',
   'salt' => 'salt'
-))
+));
+
+
 
  ?>
