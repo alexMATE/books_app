@@ -22,7 +22,8 @@
 
 <?php
 require_once 'db2.php';
-// Conecting
+// Conecting and write data
+
 $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 if(isset($_POST['submit'])) {
@@ -46,14 +47,25 @@ if(isset($_POST['submit'])) {
 }
 
 // Display Name and Author
-$query = $dbh->query('SELECT book_name, book_author FROM booksDB');
+
+$query = $dbh->query('SELECT book_name, book_author, book_id FROM booksDB');
 
 while ($r = $query->fetch()) {
   echo '<br>';
   echo '<h4>' . $r['book_name'] . '</h4>';
   echo $r['book_author'], '<br>';
+  echo '<a href="delete.php"id="'.$r["book_id"].'">Delete</a>';
+  // echo '<td><input type="submit" name="'.$r['book_id'].'" value="Delete" /></td>';
+
+
 }
-die();
+// die();
+
+
+
+// Delete
+
+
 
  ?>
 
