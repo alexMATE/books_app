@@ -55,7 +55,7 @@ while ($r = $query->fetch()) {
   echo '<h4>' . $r['book_name'] . '</h4>';
   echo $r['book_author'], '<br>';
   echo '<a href="delete.php"id="'.$r["book_id"].'">Delete</a>';
-  // echo '<td><input type="submit" name="'.$r['book_id'].'" value="Delete" /></td>';
+
 
 
 }
