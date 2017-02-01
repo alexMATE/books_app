@@ -1,24 +1,3 @@
-<html>
-<head>
-<title>insert data in database using PDO(php data object)</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-
-<div id="main">
-<h1>Insert data into database using PDO</h1>
-  <div id="login">
-  <h2>Upload Books Form</h2>
-  <hr/>
-    <form action="" method="post">
-      <label>Book name :</label>
-      <input type="text" name="book_name" id="name" required="required" placeholder="Please Enter Name"/><br /><br />
-      <label>Book author :</label>
-      <input type="text" name="book_author" id="author" required="required" placeholder="Author"/><br/><br />
-      <input type="submit" value=" Submit " name="submit"/><br />
-    </form>
-  </div>
-</div>
 
 <?php
 require_once 'db2.php';
@@ -38,7 +17,7 @@ if(isset($_POST['submit'])) {
     } else {
       echo 'Data not successfully Inserted';
     }
-    // $dbh = null;
+
   }
 
   catch(PDOException $e) {
@@ -46,24 +25,46 @@ if(isset($_POST['submit'])) {
   }
 }
 
-// Display Name and Author
+// Display Name/Author and Delete
 
 $query = $dbh->query('SELECT book_name, book_author, book_id FROM booksDB');
 
 while ($r = $query->fetch()) {
+  echo'<div class="boxes"';
   echo '<br>';
   echo '<h4>' . $r['book_name'] . '</h4>';
   echo $r['book_author'], '<br>';
-  echo '<a href="delete.php"id="'.$r["book_id"].'">Delete</a>';
+  // Delete
+  echo '<form action="" method="post">';
+  echo '<input type="submit" class="submit submit-delete" value=" Delate " name="'.$r['book_id'].'"/>';
+  echo '</form>';
+  echo '</div>';
+  $id = $r['book_id'];
+  if(isset($_POST[$id])) {
+
+                try {
+                // set the PDO error mode to exception
+                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                // sql to delete a record
+                $sql = "DELETE FROM booksDB WHERE book_id='$id'";
+
+                // use exec() because no results are returned
+                $dbh->exec($sql);
+                echo "Record deleted successfully";
+                }
+            catch(PDOException $e)
+                {
+                echo $sql . "<br>" . $e->getMessage();
+                }
+
+            $dbh = null;
+            header("Refresh:0");
+  }
 
 
 
 }
-// die();
-
-
-
-// Delete
 
 
 
