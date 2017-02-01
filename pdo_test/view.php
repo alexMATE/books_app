@@ -38,7 +38,7 @@ while ($r = $query->fetch()) {
   echo '<form action="" method="post">';
   echo '<input type="submit" class="submit submit-delete" value=" Delate " name="'.$r['book_id'].'"/>';
   echo '</form>';
-  echo '</div>';
+ echo '</div>';
   $id = $r['book_id'];
   if(isset($_POST[$id])) {
 
@@ -60,6 +60,7 @@ while ($r = $query->fetch()) {
 
             $dbh = null;
             header("Refresh:0");
+
   }
 
 
