@@ -20,14 +20,21 @@
 <?php
 require_once("/var/www/html/books/pdo_test/db2.php");
 $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-$username	= $_POST['username'];
-$password	= $_POST['password'];
-$first_name	= $_POST['first_name'];
-$last_name	= $_POST['last_name'];
-$email		= $_POST['email'];
+
+// $username	= $_POST['username'];
+// $password	= $_POST['password'];
+// $first_name	= $_POST['first_name'];
+// $last_name	= $_POST['last_name'];
+// $email		= $_POST['email'];
 
 // Insert User in tu DB
 if(isset($_POST['submit'])) {
+
+  $username	= $_POST['username'];
+  $password	= $_POST['password'];
+  $first_name	= $_POST['first_name'];
+  $last_name	= $_POST['last_name'];
+  $email		= $_POST['email'];
   // check if username and email exist else insert
   $exists = 0;
 	$result = $dbh->query("SELECT username from login WHERE username = '{$username}' LIMIT 1");
