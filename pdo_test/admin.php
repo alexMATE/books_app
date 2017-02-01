@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,9 +39,11 @@
    <div class="content">
 
      <?php
-     require_once 'db2.php';
-     require_once 'view.php';
-      ?>
+require_once 'view.php';
+require_once '/var/www/html/books/login_admin/login_new.php';
+  ?>
+
+
 
    </div>
 

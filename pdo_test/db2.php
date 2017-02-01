@@ -1,6 +1,6 @@
 <?php
 $servername = "127.0.0.1";
 $username = "root";
-$password = "cheman2123";
+$password = "48#mut@";
 $dbname = "books_list";
 ?>

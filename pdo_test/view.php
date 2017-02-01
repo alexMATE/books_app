@@ -5,6 +5,9 @@ require_once 'db2.php';
 
 $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
+
+
+
 if(isset($_POST['submit'])) {
 
   try {
