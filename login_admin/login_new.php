@@ -24,6 +24,7 @@ session_start();
     	} else {
         $_SESSION['username'] = $username;
         echo $_SESSION['username'];
+        header("Location: /books/pdo_test/admin.php");
 
     	}
 
@@ -32,7 +33,6 @@ session_start();
     catch(PDOException $e) {
       echo $e->getMessage();
     }
-
   }
 
 

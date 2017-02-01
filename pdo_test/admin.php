@@ -18,6 +18,14 @@
   <title>Insert Data</title>
 </head>
 <body>
+  <a href="/books/login_admin/login_form.php">Log In</a>
+  <br>
+  <a href="/books/login_admin/register_new.php">Registrate</a>
+  <br>
+  <a href="/books/login_admin/logout.php">Log Out</a>
+  <br>
+  <a href="/books/index.php">Home</a>
+  <br>
 
  <div id="main">
  <header class="header">

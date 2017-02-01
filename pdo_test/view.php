@@ -13,7 +13,7 @@ if(isset($_POST['submit'])) {
 
   try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO booksDB (book_name, book_author) VALUES ('".$_POST["book_name"]."','".$_POST["book_author"]."')";
+    $sql = "INSERT INTO booksDB (book_name, book_author, post_user) VALUES ('".$_POST["book_name"]."','".$_POST["book_author"]."','".$_SESSION['username']."')";
 
     if ($dbh->query($sql)) {
       echo 'New Record Inserted Successfully';
@@ -31,13 +31,15 @@ if(isset($_POST['submit'])) {
 
 // Display Name/Author and Delete
 
-$query = $dbh->query('SELECT book_name, book_author, book_id FROM booksDB');
+$query = $dbh->query('SELECT book_name, book_author, book_id, post_user FROM booksDB');
 
 while ($r = $query->fetch()) {
   echo'<div class="boxes"';
   echo '<br>';
   echo '<h4>' . $r['book_name'] . '</h4>';
   echo $r['book_author'], '<br>';
+  echo $r['post_user'], '<br>';
+  // echo $_SESSION['username'];
   // Delete
   echo '<form action="" method="post">';
   echo '<input type="submit" class="submit submit-delete" value=" Delate " name="'.$r['book_id'].'"/>';

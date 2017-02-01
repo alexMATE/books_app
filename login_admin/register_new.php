@@ -5,6 +5,14 @@
     <title>Registration Form</title>
   </head>
   <body>
+    <a href="/books/login_admin/login_form.php">Log In</a>
+    <br>
+    <a href="/books/pdo_test/admin.php">Admin</a>
+    <br>
+    <a href="/books/login_admin/logout.php">Log Out</a>
+    <br>
+    <a href="/books/index.php">Home</a>
+    <br>
     <h1>Registracion Form</h1>
 
     <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
