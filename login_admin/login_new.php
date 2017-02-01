@@ -2,6 +2,7 @@
 
 <?php
   require_once("/var/www/html/books/pdo_test/db2.php");
+  require_once("/var/www/html/books/login_admin/login_form.php");
   $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
   // $username = $_POST['username'];
@@ -24,8 +25,7 @@
     		echo "<p>Invalid username/password combination</p>";
     	} else {
     		echo "<p>Logged in successfully</p>";
-    	  session_start();
-        $sesion = $_SESSION['username'];
+    	  
     	}
 
     }
