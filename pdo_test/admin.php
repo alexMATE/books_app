@@ -41,6 +41,10 @@
      <?php
 
 require_once 'view.php';
+// session_start();
+//
+// echo $_SESSION['username'];
+
   ?>
 
 

@@ -5,8 +5,9 @@ require_once 'db2.php';
 
 $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
+session_start();
 
-
+if(isset($_SESSION['username'])) {
 
 if(isset($_POST['submit'])) {
 
@@ -68,6 +69,7 @@ while ($r = $query->fetch()) {
 
 
 
+}
 }
 
 
