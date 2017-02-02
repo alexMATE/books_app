@@ -7,7 +7,9 @@ while ($r = $query->fetch()) {
   echo '<br>';
   echo '<h4>' . $r['book_name'] . '</h4>';
   echo $r['book_author'], '<br>';
-  echo $r['post_user'], '<br>';
+  echo '<span class="readNow">';
+  echo 'By '.$r['post_user'], '<br>';
+  echo '</span>';
   echo'</div>';
 }
 

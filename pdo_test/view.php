@@ -5,7 +5,7 @@ require_once 'db2.php';
 
 $dbh = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-session_start();
+//session_start();
 
 if(isset($_SESSION['username'])) {
 
@@ -38,8 +38,9 @@ while ($r = $query->fetch()) {
   echo '<br>';
   echo '<h4>' . $r['book_name'] . '</h4>';
   echo $r['book_author'], '<br>';
-  echo $r['post_user'], '<br>';
-  // echo $_SESSION['username'];
+  echo '<span class="readNow">';
+  echo $r['post_user']. ' reads this now';
+  echo '</span>';
   // Delete
   echo '<form action="" method="post">';
   echo '<input type="submit" class="submit submit-delete" value=" Delate " name="'.$r['book_id'].'"/>';

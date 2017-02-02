@@ -2,26 +2,20 @@
 require_once("/var/www/html/books/login_admin/login_new.php");
  ?>
 
- <!DOCTYPE html>
- <html>
-   <head>
-     <meta charset="utf-8">
-     <title>Log In</title>
-   </head>
-   <body>
-     <a href="/books/login_admin/register_new.php">Register</a>
-     <br>
-     <a href="/books/pdo_test/admin.php">Admin</a>
-     <br>
-     <a href="/books/login_admin/logout.php">Log Out</a>
-     <br>
-     <a href="/books/index.php">Home</a>
-     <br>
-     <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-       Username: <input type="text" name="username" /><br />
-       Password: <input type="password" name="password" /><br />
+<?php include("/var/www/html/books/components/header.php"); ?>
+<div class="loginBtns controlBtns">
+  <a class="menuBtn register" href="/books/login_admin/register_new.php">Registrate</a>
+</div>
+<div class="adminBtns controlBtns">
+  <a class="menuBtn" href="/books/pdo_test/admin.php">Admin</a>
+  <a class="menuBtn" href="/books/login_admin/logout.php">Log Out</a>
+</div>
+</header>
+     <form class="submitForms" action="<?=$_SERVER['PHP_SELF']?>" method="post">
+       Username: <input class="textboxs" type="text" name="username" /><br />
+       Password: <input class="textboxs" type="password" name="password" /><br />
 
-       <input type="submit" name="submit" value="Login" />
+       <input class="submit" type="submit" name="submit" value="Login" />
      </form>
    </body>
  </html>
