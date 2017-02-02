@@ -8,9 +8,9 @@
   <a class="menuBtn" href="/books/login_admin/logout.php">Log Out</a>
 </div>
 </header>
-    <h1>Registracion Form</h1>
 
     <form class="submitForms" action="<?=$_SERVER['PHP_SELF']?>" method="post">
+      <h3>Registracion Form</h3>
   		Username: <input class="textboxs" type="text" name="username" /><br />
   		Password: <input class="textboxs" type="password" name="password" /><br />
   		First name: <input class="textboxs" type="text" name="first_name" /><br />

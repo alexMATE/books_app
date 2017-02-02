@@ -12,6 +12,7 @@ require_once("/var/www/html/books/login_admin/login_new.php");
 </div>
 </header>
      <form class="submitForms" action="<?=$_SERVER['PHP_SELF']?>" method="post">
+       <h3>Log In</h3>
        Username: <input class="textboxs" type="text" name="username" /><br />
        Password: <input class="textboxs" type="password" name="password" /><br />
 
